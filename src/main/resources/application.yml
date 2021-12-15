@@ -1,5 +1,7 @@
 ## Datasource
-spring:  
+spring: 
+  config:
+    import: openapi.yml 
   security:
     user:      name: admin
       password: 1234       datasource:     url: jdbc:postgresql://localhost:5432/gira
@@ -15,4 +17,6 @@ spring:
   flyway:
     enabled: true
     driver-class-name: org.postgresql.Driver
-
+springdoc:
+  swagger-ui.path: /swagger-ui.html
+  api-docs.path: /openapi/v3/api-docs
