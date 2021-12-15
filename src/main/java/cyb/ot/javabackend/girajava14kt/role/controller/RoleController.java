@@ -1,6 +1,24 @@
 package cyb.ot.javabackend.girajava14kt.role.controller;
 
-import cyb.ot.javabackend.girajava14kt.role.model.Role;
+import java.util.List;
 
-public class RoleController {
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import cyb.ot.javabackend.girajava14kt.role.model.Role;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "${api.role.name}", description = "${api.role.description}")
+public interface RoleController {
+	
+	@Operation(method = "get", description = "get all roles")
+	@ApiResponses({
+			@ApiResponse(responseCode = "200", description = "get roles successfully"),
+			@ApiResponse(responseCode = "403", description = "do not have the correct authorization")
+	})
+	@GetMapping(value = "/roles", produces = "application/json")
+	public ResponseEntity<List<Role>> getRoles();
 }
