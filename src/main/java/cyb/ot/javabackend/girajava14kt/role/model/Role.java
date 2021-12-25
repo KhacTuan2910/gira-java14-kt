@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import cyb.ot.javabackend.girajava14kt.common.model.BaseEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "gira_role")
 public class Role extends BaseEntity {
 	@Column(name = "name", unique = true)

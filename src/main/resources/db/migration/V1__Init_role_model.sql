@@ -4,10 +4,10 @@ CREATE TABLE IF NOT EXISTS gira_role(
 	name varchar(255) not null UNIQUE,
 	description varchar(255) not null,
 	code varchar(10) not null UNIQUE,
-	created_by varchar(36) not null,
-	created_at timestamp not null,
-	updated_by varchar(36) not null,
-	updated_at timestamp not null,
+	created_by varchar(36),
+	created_at timestamp,
+	updated_by varchar(36),
+	updated_at timestamp,
 	primary key (id)
 );
 
@@ -17,12 +17,14 @@ CREATE TABLE IF NOT EXISTS gira_group_role(
 	name varchar(255) not null UNIQUE,
 	description varchar(255) not null,
 	code varchar(10) not null UNIQUE,
-	created_by varchar(36) not null,
-	created_at timestamp not null,
-	updated_by varchar(36) not null,
-	updated_at timestamp not null,
+	created_by varchar(36),
+	created_at timestamp,
+	updated_by varchar(36),
+	updated_at timestamp,
 	primary key (id)
 );
+
+CREATE sequence hibernate_sequence start 1 increment 1;
 
 CREATE TABLE IF NOT EXISTS gira_role_group_role(
 	role_id bigint,
