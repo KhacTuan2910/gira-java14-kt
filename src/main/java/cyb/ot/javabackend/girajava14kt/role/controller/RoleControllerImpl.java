@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RestController;
 
+import cyb.ot.javabackend.girajava14kt.common.ResponseHandler;
 import cyb.ot.javabackend.girajava14kt.role.dto.RoleDTO;
 import cyb.ot.javabackend.girajava14kt.role.model.Role;
 import cyb.ot.javabackend.girajava14kt.role.service.RoleService;
@@ -20,21 +21,23 @@ public class RoleControllerImpl implements RoleController {
 	}
 	
 	@Override
-	public ResponseEntity<List<RoleDTO>> getRoles() {
+	public ResponseEntity<Object> getRoles() {
 		List<RoleDTO> roles = service.findAllDTO();
 		
-		return new ResponseEntity<>(roles, HttpStatus.OK);
+		return ResponseHandler.getResponse(roles, HttpStatus.OK);
 	}
 
 	@Override
 	public ResponseEntity<Object> createRole(RoleDTO dto, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
-			return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+			return ResponseHandler.getResponse(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+			//return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
 		}
 		
 		RoleDTO createRole = service.create(dto);
 		
-		return new ResponseEntity<>(createRole, HttpStatus.OK);
+		return ResponseHandler.getResponse(createRole, HttpStatus.OK);
+		//return new ResponseEntity<>(createRole, HttpStatus.OK);
 	}
 
 }
