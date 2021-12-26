@@ -1,7 +1,5 @@
 package cyb.ot.javabackend.girajava14kt.role.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
@@ -27,7 +25,7 @@ public interface RoleController {
 			@ApiResponse(responseCode = "403", description = "do not have the correct authorization")
 	})
 	@GetMapping(value = "/roles", produces = "application/json")
-	public ResponseEntity<List<RoleDTO>> getRoles();
+	public ResponseEntity<Object> getRoles();
 	
 	@Operation(method = "post", description = "create new role")
 	@ApiResponses({
