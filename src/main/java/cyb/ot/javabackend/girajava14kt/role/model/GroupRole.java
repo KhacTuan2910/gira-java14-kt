@@ -19,9 +19,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
+@NoArgsConstructor
 @Table(name = "gira_group_role")
 public class GroupRole extends BaseEntity {
 	@Column(name = "name", unique = true)
