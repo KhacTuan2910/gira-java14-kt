@@ -4,11 +4,15 @@ import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import cyb.ot.javabackend.girajava14kt.role.dto.RoleDTO;
+import cyb.ot.javabackend.girajava14kt.role.dto.UpdateRoleDTO;
 import cyb.ot.javabackend.girajava14kt.role.model.Role;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -37,4 +41,24 @@ public interface RoleController {
 				@Parameter(description = "role dto") @Valid @RequestBody RoleDTO dto,
 				BindingResult bindingResult
 			);
+	
+	@Operation(method = "put", description = "update role",
+			responses = {
+					@ApiResponse(responseCode = "400", description = "Invalid data"),
+					@ApiResponse(responseCode = "200", description = "updated role successfully")
+			})
+	@PutMapping(value = "/role/{id}")
+	public ResponseEntity<Object> updateRole(
+			@Parameter(description = "role id") @PathVariable("id") long id,
+			@Parameter(description = "role dto") @Valid @RequestBody UpdateRoleDTO dto,
+				BindingResult bindingResult
+			);
+	
+	@Operation(method = "delete", description = "detele role",
+			responses = {
+					@ApiResponse(responseCode = "400", description = "Invalid id"),
+					@ApiResponse(responseCode = "200", description = "deteled role successfully")
+			})
+	@DeleteMapping(value = "/role/{id}")
+	public ResponseEntity<Object> deleteRole(@Parameter(description = "role id") @PathVariable("id") long id);
 }

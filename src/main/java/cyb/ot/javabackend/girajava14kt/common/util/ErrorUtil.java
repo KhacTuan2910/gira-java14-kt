@@ -1,4 +1,4 @@
-package cyb.ot.javabackend.girajava14kt.common;
+package cyb.ot.javabackend.girajava14kt.common.util;
 
 import java.util.LinkedList;
 import java.util.List;
