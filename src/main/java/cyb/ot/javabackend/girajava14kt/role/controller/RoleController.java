@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import cyb.ot.javabackend.girajava14kt.role.dto.RoleDTO;
 import cyb.ot.javabackend.girajava14kt.role.dto.UpdateRoleDTO;
-import cyb.ot.javabackend.girajava14kt.role.model.Role;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "${api.role.name}", description = "${api.role.description}")
+@Tag(name = "Role Controller", description = "Api role")
 public interface RoleController {
 	
 	@Operation(method = "get", description = "get all roles")

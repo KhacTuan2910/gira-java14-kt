@@ -12,14 +12,15 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import cyb.ot.javabackend.girajava14kt.common.model.BaseEntity;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @Entity
+@SuperBuilder
 @NoArgsConstructor
 @Table(name = "gira_group_role")
 public class GroupRole extends BaseEntity {
