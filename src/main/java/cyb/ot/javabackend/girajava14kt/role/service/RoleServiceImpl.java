@@ -26,7 +26,7 @@ public class RoleServiceImpl implements RoleService {
 		List<Role> roles = repository.findAll();
 		
 		if (roles.isEmpty()) {
-			throw new NotFoundException("This is for test only.");
+			throw new NotFoundException("Roles is empty.");
 		}
 		
 //		List<RoleDTO> roleDTOs = new ArrayList<RoleDTO>();
@@ -87,8 +87,6 @@ public class RoleServiceImpl implements RoleService {
 		role.setDescription(dto.getDescription());
 		
 		Role updatedRole = repository.save(role);
-		
-		String errors = "";
 		
 		return RoleConverter.toRoleDTO(updatedRole);
 	}

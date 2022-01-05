@@ -1,5 +1,6 @@
 package cyb.ot.javabackend.girajava14kt.common.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -24,7 +25,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @MappedSuperclass
-public class BaseEntity {
+public class BaseEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	protected Long id;
