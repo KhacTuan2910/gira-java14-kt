@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import cyb.ot.javabackend.girajava14kt.common.ResponseHandler;
 import cyb.ot.javabackend.girajava14kt.role.dto.RoleDTO;
 import cyb.ot.javabackend.girajava14kt.role.dto.UpdateRoleDTO;
-import cyb.ot.javabackend.girajava14kt.role.model.Role;
 import cyb.ot.javabackend.girajava14kt.role.service.RoleService;
 
 @RestController
