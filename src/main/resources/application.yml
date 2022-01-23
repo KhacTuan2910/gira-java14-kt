@@ -20,4 +20,10 @@ spring:
 springdoc:
   swagger-ui.path: /swagger-ui.html
   api-docs.path: /openapi/v3/api-docs
+
+gira:
+  security:
+    jwt:
+      expiration: 86400000
+      secret: thismysecret
   
